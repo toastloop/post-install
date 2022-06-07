@@ -1,0 +1,261 @@
+#!/bin/bash
+
+##
+## Setup
+##
+
+## Pacman
+sudo pacman -Syuu
+
+## Keyboard
+sudo localectl set-keymap --no-convert us
+sudo localectl --no-convert set-x11-keymap us pc104
+
+## Time
+sudo pacman -S --noconfirm ntp
+sudo systemctl enable ntpd.service
+sudo systemctl start ntpd.service
+
+## Network
+sudo pacman -S --noconfirm networkmanager network-manager-applet
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
+
+##
+## Development
+##
+
+## Git
+sudo pacman -S --noconfirm git
+
+## Rust
+sudo pacman -S --noconfirm rustup
+rustup default stable
+
+## Paru
+mkdir -p $HOME/Git/paru
+git clone https://aur.archlinux.org/paru.git $HOME/Git/paru
+cd $HOME/Git/paru
+makepkg -si --noconfirm
+cd $HOME
+
+## Java
+paru -S --auro --noconfirm jdk
+archlinux-java set java-18-jdk
+
+##
+## System
+##
+
+## Microcode
+sudo pacman -S --noconfirm amd-ucode intel-ucode
+
+## Video
+sudo pacman -S --noconfirm nvidia nvidia-settings
+paru -S --aur --noconfirm gwe
+
+## XDG
+sudo pacman -S --noconfirm xdg-utils archlinux-xdg-menu xdg-user-dirs xdg-desktop-portal  	xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
+
+##
+## Containers / VMs
+##
+
+## Flatpak
+sudo pacman -S --noconfirm flatpak flatpak-xdg-utils
+
+## Linux Containers
+sudo pacman -S --noconfirm lxc arch-install-scripts
+
+## Virt Manager
+sudo pacman -S --noconfirm qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat iptables-nft libguestfs
+sudo systemctl enable libvirtd.service
+sudo usermod -a -G libvirt $USER
+newgrp libvirt
+sudo systemctl start libvirtd.service
+echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
+echo "options kvm-amd nested=1" | sudo tee /etc/modprobe.d/kvm-amd.conf
+
+## Languages
+# jdk
+# openjdk
+# rustup
+
+
+## Programs
+# alacritty
+# nvim
+# pcmanfm-gtk3
+
+## Utils
+# bat
+# bottom
+# choose
+# dog
+# dua-cli
+# dust
+# exa
+# fd
+# fish
+# git-delta
+# gitui
+# htmlq-bin
+# jql
+# light
+# nfs-utils
+# ntp
+# playerctl
+# pleaser
+# procs
+# reflector
+# ripgrep
+# ripgrep-all
+# sd
+# spotifyd
+# starship
+# tailscale
+# tealdeer
+# the_silver_searcher
+# tig
+# tokei
+# virt-manager
+# virt-viewer
+# xcp
+# xdg-utils
+# xdg-user-dirs
+# xdotool
+# zoxide
+
+## Bluetooth
+# bluez
+# bluez-libs
+# bluez-tools
+# bluez-Utils
+
+## Printer
+# hplip
+
+## Themes
+# nordic-theme
+# nordzy-cursors
+# nordzy-icon-theme-git
+
+## Fonts
+# nerd-fonts-noto
+
+## AUR
+# devour
+# lazydocker
+# macchina
+# mbrola-voices-en1
+# mbrola-voices-us1
+# mbrola-voices-us2
+# mbrola-voices-us3
+# pacfinder
+# paru
+# preload
+# rm-improved
+# sanctity
+# xdg-ninja-git
+
+
+## Custom
+# blueman
+# dunst
+# espeak
+# feh
+# i3lock-fancy-dualmonitors-git
+# leftwm
+# leftwm-theme-git
+# network-manager-applet
+# picom-ibhagwan-git
+# nsxiv
+# nvidia-dkms
+# pavucontrol
+# python-pywal
+# qpwgraph
+# rofi
+# spotify-tui
+# sptlrx-bin
+# sxhkd
+
+## Flatpaks
+# org.kde.ark
+# io.atom.Atom
+# org.audacityteam.Audacity
+# com.bitwarden.desktop
+# org.blender.Blender
+# com.usebottles.bottles
+# org.gnome.Boxes
+# org.gnome.Calculator
+# org.gnome.Cheese
+# org.chromium.Chromium
+# com.github.suzie97.communique
+# com.github.hluk.copyq
+# org.desmume.DeSmuME
+# com.discordapp.Discord
+# org.kde.dolphin
+# org.DolphinEmu.dolphin-emu
+# com.github.wwmm.easyeffects
+# im.riot.Riot
+# org.fedoraproject.MediaWriter
+# org.mozilla.firefox
+# org.flameshot.Flameshot
+# com.github.tchx84.Flatseal
+# com.meetfranz.Franz
+# io.github.shiftey.Desktop
+# org.gimp.GIMP
+# org.gpodder.gpodder
+# org.kde.gwenview
+# fr.handbrake.ghb
+# com.heroicgameslauncher.hgl
+# io.github.Hexchat
+# org.inkscape.Inkscape
+# re.sonny.Junction
+# org.kde.kdenlive
+# tv.kodi.Kodi
+# org.kde.krita
+# org.kde.kwrite
+# org.gnome.Lollypop
+# io.github.m64p.m64p
+# com.github.marktext.marktext
+# io.mgba.mGBA
+# io.mpv.Mpv
+# com.obsproject.Studio
+# org.kde.okular
+# org.onlyofffice.desktopeditors
+# com.parsecgaming.parsec
+# org.ppsspp.PPSSPP
+# org.qbittorrent.qBittorrent
+# org.remmina.Remmina
+# org.libretro.RetroArch
+# net.rpcs3.RPCS3
+# de.haeckerfelix.Shortwave
+# org.gnome.Shotwell
+# com.slack.Slack
+# com.spotify.Client
+# com.valvesoftware.Steam
+# org.stellarium.Stellarium
+# me.kozec.syncthingtk
+# org.telegram.desktop
+# org.mozilla.Thunderbird
+# com.visualstudio.code
+# org.videolan.VLC
+# org.yuzu_emu.yuzu
+# us.zoom.Zoom
+
+flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.kde.ark io.atom.Atom org.audacityteam.Audacity com.bitwarden.desktop org.blender.Blender com.usebottles.bottles org.gnome.Boxes org.gnome.Calculator org.gnome.Cheese org.chromium.Chromium com.github.suzie97.communique com.github.hluk.copyq org.desmume.DeSmuME com.discordapp.Discord org.kde.dolphin org.DolphinEmu.dolphin-emu com.github.wwmm.easyeffects im.riot.Riot org.fedoraproject.MediaWriter org.mozilla.firefox org.flameshot.Flameshot com.github.tchx84.Flatseal com.meetfranz.Franz io.github.shiftey.Desktop org.gimp.GIMP org.gpodder.gpodder org.kde.gwenview fr.handbrake.ghb com.heroicgameslauncher.hgl io.github.Hexchat org.inkscape.Inkscape re.sonny.Junction org.kde.kdenlive tv.kodi.Kodi org.kde.krita org.kde.kwrite org.gnome.Lollypop io.github.m64p.m64p com.github.marktext.marktext io.mgba.mGBA io.mpv.Mpv com.obsproject.Studio org.kde.okular org.onlyofffice.desktopeditors com.parsecgaming.parsec org.ppsspp.PPSSPP org.qbittorrent.qBittorrent org.remmina.Remmina org.libretro.RetroArch net.rpcs3.RPCS3 de.haeckerfelix.Shortwave org.gnome.Shotwell com.slack.Slack com.spotify.Client com.valvesoftware.Steam org.stellarium.Stellarium me.kozec.syncthingtk org.telegram.desktop org.mozilla.Thunderbird com.visualstudio.code org.videolan.VLC org.yuzu_emu.yuzu us.zoom.Zoom
+
+# Desktops
+awesome
+budgie
+cinnamon
+enlightenment
+gnome
+i3
+kde
+lxqt
+mate
+qtile
+sway
+xfce
