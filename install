@@ -128,7 +128,7 @@ chsh -s /bin/fish $USER
 sudo pacman -S --noconfirm --needed starship zoxide
 
 ## Utils
-sudo pacman -S --noconfirm --needed ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
+sudo pacman -S --noconfirm --needed ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp pcmanfm-gtk3 procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
 paru -S --aur --noconfirm --needed jql nsxiv picom-ibhagwan-git pleaser sanctity xcp
 
 ## Music
@@ -136,7 +136,7 @@ sudo pacman -S --noconfirm --needed playerctl spotifyd
 paru -S --noconfirm --needed spotify-tui sptlrx-bin
 
 ## Flatpak
-flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.kde.ark io.atom.Atom org.audacityteam.Audacity com.bitwarden.desktop org.blender.Blender com.usebottles.bottles org.gnome.Boxes org.gnome.Calculator org.gnome.Cheese org.chromium.Chromium com.github.suzie97.communique com.github.hluk.copyq org.desmume.DeSmuME com.discordapp.Discord org.kde.dolphin org.DolphinEmu.dolphin-emu com.github.wwmm.easyeffects im.riot.Riot org.fedoraproject.MediaWriter org.mozilla.firefox org.flameshot.Flameshot com.github.tchx84.Flatseal com.meetfranz.Franz io.github.shiftey.Desktop org.gimp.GIMP org.gpodder.gpodder org.kde.gwenview fr.handbrake.ghb com.heroicgameslauncher.hgl io.github.Hexchat org.inkscape.Inkscape re.sonny.Junction org.kde.kdenlive tv.kodi.Kodi org.kde.krita org.kde.kwrite org.gnome.Lollypop io.github.m64p.m64p com.github.marktext.marktext io.mgba.mGBA io.mpv.Mpv com.obsproject.Studio org.kde.okular org.onlyofffice.desktopeditors com.parsecgaming.parsec org.ppsspp.PPSSPP org.qbittorrent.qBittorrent org.remmina.Remmina org.libretro.RetroArch net.rpcs3.RPCS3 de.haeckerfelix.Shortwave org.gnome.Shotwell com.slack.Slack com.spotify.Client com.valvesoftware.Steam org.stellarium.Stellarium me.kozec.syncthingtk org.telegram.desktop org.mozilla.Thunderbird com.visualstudio.code org.videolan.VLC org.yuzu_emu.yuzu us.zoom.Zoom
+flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.audacityteam.Audacity com.discordapp.Discord org.kde.dolphin org.mozilla.firefox org.gimp.GIMP com.obsproject.Studio org.onlyofffice.desktopeditors com.spotify.Client com.visualstudio.code
 
 ##
 ## Services
