@@ -1,0 +1,39 @@
+modkey = "Mod4"
+mousekey = "Mod4"
+disable_current_tag_swap = true
+disable_tile_drag = true
+disable_window_snap = true
+focus_behaviour = "Sloppy"
+focus_new_windows = true
+layout_mode = "Tag"
+
+workspaces = [
+    { y = 0, x = 0, height = 1440, width = 2560 },
+    { y = 0, x = 2560, height = 1440, width = 2560 },
+]
+
+tags = ["", "", "阮", "輸", "﬐", "拾"]
+
+layouts = ["MainAndVertStack", "Fibonacci", "Monocle"]
+
+[[scratchpad]]
+name = "MainTerminal"
+value = "alacritty"
+
+[[scratchpad]]
+name = "Notepad"
+value = "marktext ~/Documents/notes.md"
+
+# https://github.com/leftwm/leftwm/blob/main/leftwm-core/src/utils/xkeysym_lookup.rs#L46
+
+[[keybind]]
+command = "IncreaseMainWidth"
+value = "3"
+modifier = ["Control", "Shift"]
+key = "Right"
+
+[[keybind]]
+command = "DecreaseMainWidth"
+value = "3"
+modifier = ["Control", "Shift"]
+key = "Left"
