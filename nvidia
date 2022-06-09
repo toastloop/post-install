@@ -1,0 +1,17 @@
+#!/bin/bash
+
+##
+## Nvidia
+##
+
+## Drivers
+sudo pacman -S --noconfirm --needed nvidia nvidia-settings
+
+## Green with Envy
+paru -S --aur --noconfirm --needed gwe
+
+# Services
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-persistenced.service
+sudo systemctl enable nvidia-resume.service
+sudo systemctl enable nvidia-suspend.service
