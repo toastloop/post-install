@@ -95,8 +95,6 @@ sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji n
 paru -S --aur --noconfirm --needed nerd-fonts-noto
 gsettings set org.gnome.desktop.interface font-name "Noto Sans Display 11"
 
-
-
 ##
 ## Containers / VMs
 ##
