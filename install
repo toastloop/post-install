@@ -7,7 +7,7 @@
 ## Chaotic AUR
 sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key FBA220DFC880C036
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
 ## Pacman
 sudo cp pacman.conf /etc/pacman.conf
@@ -126,6 +126,12 @@ echo "options kvm-amd nested=1" | sudo tee /etc/modprobe.d/kvm-amd.conf
 sudo pacman -S --noconfirm --needed fish
 chsh -s /bin/fish $USER
 sudo pacman -S --noconfirm --needed starship zoxide
+cp config.fish ~/.config/fish/config.fish
+
+## Desktop
+paru -S leftwm leftwm-theme-git
+cp config.toml ~/.config/leftwm/config.toml
+cp themes.toml ~/.config/leftwm/themes.toml
 
 ## Utils
 sudo pacman -S --noconfirm --needed ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp pcmanfm-gtk3 polybar procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
