@@ -129,7 +129,7 @@ sudo pacman -S --noconfirm --needed starship zoxide
 
 ## Utils
 sudo pacman -S --noconfirm --needed ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
-paru -S --aur --noconfirm --needed jql nsxiv picom-ibhagwan-git pleaser xcp
+paru -S --aur --noconfirm --needed jql nsxiv picom-ibhagwan-git pleaser sanctity xcp
 
 ## Music
 sudo pacman -S --noconfirm --needed playerctl spotifyd
