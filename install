@@ -125,9 +125,12 @@ sudo pacman -S --noconfirm --needed starship zoxide
 cp config.fish ~/.config/fish/config.fish
 
 ## Desktop
-paru -S leftwm leftwm-theme-git
+paru -S --aur --noconfirm --needed leftwm leftwm-theme-git
 cp config.toml ~/.config/leftwm/config.toml
 cp themes.toml ~/.config/leftwm/themes.toml
+
+## Session Manager
+paru -S --aur --noconfirm --needed ly
 
 ## Utils
 sudo pacman -S --noconfirm --needed ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp pcmanfm-gtk3 polybar procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
@@ -149,4 +152,5 @@ sudo systemctl enable --now cups.service
 sudo systemctl enable --now ufw.service
 sudo systemctl enable --now reflector.service
 sudo systemctl enable --now preload.service
+sudo systemctl enable --now ly.service
 systemctl enable --now xdg-user-dirs-update.service --user
