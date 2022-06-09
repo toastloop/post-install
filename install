@@ -61,8 +61,6 @@ sudo pacman -S --noconfirm --needed amd-ucode intel-ucode
 ## Xorg
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps xorg-drivers
 
-
-
 ## Sound
 sudo pacman -S --noconfirm --needed pipewire gst-plugin-pipewire pipewire-alsa pipewire-jack wireplumber pipewire-pulse pavucontrol
 
