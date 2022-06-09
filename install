@@ -142,9 +142,9 @@ flatpak install flathub --system --app --assumeyes --noninteractive --or-update 
 ## Services
 ##
 
-sudo systemctl enable ntpd.service
-sudo systemctl enable cups.service
-sudo systemctl enable ufw.service
-sudo systemctl enable reflector.service
-sudo systemctl enable preload.service
-systemctl enable xdg-user-dirs-update.service --user
+sudo systemctl enable --now ntpd.service
+sudo systemctl enable --now cups.service
+sudo systemctl enable --now ufw.service
+sudo systemctl enable --now reflector.service
+sudo systemctl enable --now preload.service
+systemctl enable --now xdg-user-dirs-update.service --user
