@@ -145,7 +145,7 @@ sudo pacman -S --noconfirm --needed playerctl spotifyd
 paru -S --noconfirm --needed spotify-tui sptlrx-bin
 
 ## Flatpak
-flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.audacityteam.Audacity com.discordapp.Discord org.kde.dolphin org.mozilla.firefox org.gimp.GIMP com.obsproject.Studio org.onlyofffice.desktopeditors com.spotify.Client com.visualstudio.code
+flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.audacityteam.Audacity com.discordapp.Discord org.mozilla.firefox org.gimp.GIMP com.obsproject.Studio org.onlyofffice.desktopeditors com.spotify.Client com.visualstudio.code
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
 sudo flatpak override --env=GTK_THEME=Nordic
