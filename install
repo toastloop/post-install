@@ -126,8 +126,6 @@ echo "options kvm-amd nested=1" | sudo tee /etc/modprobe.d/kvm-amd.conf
 sudo pacman -S --noconfirm --needed fish
 chsh -s /bin/fish $USER
 sudo pacman -S --noconfirm --needed starship zoxide
-cp config.fish ~/.config/fish/config.fish
-cp starship.toml ~/.config/starship.toml
 
 ## Desktop
 paru -S --aur --noconfirm --needed leftwm leftwm-theme-git
@@ -161,8 +159,10 @@ sudo systemctl enable preload.service
 sudo systemctl enable ly.service
 systemctl enable xdg-user-dirs-update.service --user
 
-cp config.toml ~/.config/leftwm/config.toml
-cp themes.toml ~/.config/leftwm/themes.toml
+cp ./config.fish ~/.config/fish/config.fish
+cp ./starship.toml ~/.config/starship.toml
+cp ./config.toml ~/.config/leftwm/config.toml
+cp ./themes.toml ~/.config/leftwm/themes.toml
 
 read -p "Would you like to reboot? (suggested) [Y/n] " yn
 case $yn in
