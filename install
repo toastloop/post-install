@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCRIPTPATH="$( cd "$(dirname "$0")" || exit ; pwd -P )"
+export SCRIPTPATH
+
 ##
 ## Setup
 ##
@@ -159,10 +162,10 @@ sudo systemctl enable preload.service
 sudo systemctl enable ly.service
 systemctl enable xdg-user-dirs-update.service --user
 
-cp ./config.fish ~/.config/fish/config.fish
-cp ./starship.toml ~/.config/starship.toml
-cp ./config.toml ~/.config/leftwm/config.toml
-cp ./themes.toml ~/.config/leftwm/themes.toml
+cp $SCRIPTPATH/config.fish $HOME/.config/fish/config.fish
+cp $SCRIPTPATH/starship.toml $HOME/.config/starship.toml
+cp $SCRIPTPATH/config.toml $HOME/.config/leftwm/config.toml
+cp $SCRIPTPATH/themes.toml $HOME/.config/leftwm/themes.toml
 
 read -p "Would you like to reboot? (suggested) [Y/n] " yn
 case $yn in
