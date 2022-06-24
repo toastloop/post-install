@@ -2,22 +2,4 @@
 url = "https://raw.githubusercontent.com/toastloop/themes/master/known.toml"
 name = "toastloop"
 definitions_version = 1
-
-[[repos.themes]]
-name = "RustyGlass"
-repository = "https://github.com/toastloop/rustyglass"
-commit = "*"
-version = "1.0"
-current = false
-
-[[repos.themes]]
-name = "ColorSpace"
-repository = "https://github.com/toastloop/colorspace"
-commit = "*"
-version = "1.0"
-current = false
-
-[[repos]]
-url = "localhost"
-name = "LOCAL"
-definitions_version = 1
+themes = []
