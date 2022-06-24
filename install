@@ -89,6 +89,10 @@ paru -S --aur --noconfirm --needed nordic-theme nordzy-cursors nordzy-icon-theme
 gsettings set org.gnome.desktop.interface gtk-theme Nordic
 gsettings set org.gnome.desktop.interface cursor-theme "Nordzy-cursors"
 gsettings set org.gnome.desktop.interface icon-theme Nordzy-dark
+mkdir ~/.themes
+mkdir ~/.icons
+sudo cp -r /usr/share/themes/Nordic ~/.themes/Nordic
+sudo cp -r /usr/share/icons/Nordzy ~/.icons/Nordzy
 
 ## Fonts
 sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
@@ -123,11 +127,10 @@ sudo pacman -S --noconfirm --needed fish
 chsh -s /bin/fish $USER
 sudo pacman -S --noconfirm --needed starship zoxide
 cp config.fish ~/.config/fish/config.fish
+cp starship.toml ~/.config/starship.toml
 
 ## Desktop
 paru -S --aur --noconfirm --needed leftwm leftwm-theme-git
-cp config.toml ~/.config/leftwm/config.toml
-cp themes.toml ~/.config/leftwm/themes.toml
 
 ## Session Manager
 paru -S --aur --noconfirm --needed ly
@@ -142,15 +145,29 @@ paru -S --noconfirm --needed spotify-tui sptlrx-bin
 
 ## Flatpak
 flatpak install flathub --system --app --assumeyes --noninteractive --or-update org.audacityteam.Audacity com.discordapp.Discord org.kde.dolphin org.mozilla.firefox org.gimp.GIMP com.obsproject.Studio org.onlyofffice.desktopeditors com.spotify.Client com.visualstudio.code
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.icons
+sudo flatpak override --env=GTK_THEME=Nordic
 
 ##
 ## Services
 ##
 
-sudo systemctl enable --now ntpd.service
-sudo systemctl enable --now cups.service
-sudo systemctl enable --now ufw.service
-sudo systemctl enable --now reflector.service
-sudo systemctl enable --now preload.service
-sudo systemctl enable --now ly.service
-systemctl enable --now xdg-user-dirs-update.service --user
+sudo systemctl enable ntpd.service
+sudo systemctl enable cups.service
+sudo systemctl enable ufw.service
+sudo systemctl enable reflector.service
+sudo systemctl enable preload.service
+sudo systemctl enable ly.service
+systemctl enable xdg-user-dirs-update.service --user
+
+cp config.toml ~/.config/leftwm/config.toml
+cp themes.toml ~/.config/leftwm/themes.toml
+
+read -p "Would you like to reboot? (suggested) [Y/n] " yn
+case $yn in
+	[Yy]* ) reboot;;
+	[Nn]* ) ;;
+	"" ) reboot;;
+	* )	echo "Please answer [y/n].";;
+esac
