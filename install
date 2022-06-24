@@ -170,6 +170,10 @@ mkdir -p $HOME/.config/fish && cp $SCRIPTPATH/config.fish $HOME/.config/fish/con
 cp $SCRIPTPATH/starship.toml $HOME/.config/starship.toml
 mkdir -p $HOME/.config/leftwm && cp $SCRIPTPATH/config.toml $HOME/.config/leftwm/config.toml
 mkdir -p $HOME/.config/leftwm && cp $SCRIPTPATH/themes.toml $HOME/.config/leftwm/themes.toml
+leftwm-theme update
+leftwm-theme install "ColorSpace"
+leftwm-theme apply "ColorSpace"
+touch $HOME/leftwm/themes/ColorSpace/polybar/cache.txt
 
 read -p "Would you like to reboot? (suggested) [Y/n] " yn
 case $yn in
