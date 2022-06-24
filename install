@@ -92,8 +92,8 @@ paru -S --aur --noconfirm --needed nordic-theme nordzy-cursors nordzy-icon-theme
 gsettings set org.gnome.desktop.interface gtk-theme Nordic
 gsettings set org.gnome.desktop.interface cursor-theme "Nordzy-cursors"
 gsettings set org.gnome.desktop.interface icon-theme Nordzy-dark
-mkdir ~/.themes && sudo cp -r /usr/share/themes/Nordic ~/.themes/Nordic
-mkdir ~/.icons && sudo cp -r /usr/share/icons/Nordzy ~/.icons/Nordzy
+mkdir ~/.themes && sudo cp -r /usr/share/themes/Nordic $HOME/.themes/Nordic
+mkdir ~/.icons && sudo cp -r /usr/share/icons/Nordzy $HOME/.icons/Nordzy
 
 ## Fonts
 sudo pacman -S --noconfirm --needed noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
