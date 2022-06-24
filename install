@@ -167,6 +167,7 @@ systemctl enable xdg-user-dirs-update.service --user
 mkdir -p $HOME/.config
 mkdir -p $HOME/.config/alacritty && cp $SCRIPTPATH/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 mkdir -p $HOME/.config/fish && cp $SCRIPTPATH/config.fish $HOME/.config/fish/config.fish
+mkdir -p $HOME/.config/gtk-3.0 && cp $SCRIPTPATH/settings.ini $HOME/.config/gtk-3.0/settings.ini
 cp $SCRIPTPATH/starship.toml $HOME/.config/starship.toml
 mkdir -p $HOME/.config/leftwm && cp $SCRIPTPATH/config.toml $HOME/.config/leftwm/config.toml
 mkdir -p $HOME/.config/leftwm && cp $SCRIPTPATH/themes.toml $HOME/.config/leftwm/themes.toml
