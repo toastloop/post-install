@@ -135,7 +135,7 @@ paru -S --aur --noconfirm --needed leftwm leftwm-theme-git
 paru -S --aur --noconfirm --needed ly
 
 ## Utils
-sudo pacman -S --noconfirm --needed alacritty ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg fzf git-delta gitui htmlq jq light mpv nfs-utils ntp pcmanfm-gtk3 polybar procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
+sudo pacman -S --noconfirm --needed alacritty ark bat bottom choose dog dua-cli dunst dust exa fd feh ffmpeg flameshot fzf git-delta gitui htmlq jq light mpv nfs-utils ntp pcmanfm-gtk3 polybar procs reflector ripgrep ripgrep-all rofi sd sxhkd tailscale tealdeer the_silver_searcher tig tokei ufw ufw-extras xdotool
 paru -S --aur --noconfirm --needed jql nsxiv picom-ibhagwan-git pleaser sanctity xcp
 
 ## Music
