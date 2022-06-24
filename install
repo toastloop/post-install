@@ -174,7 +174,7 @@ mkdir -p $HOME/.config/leftwm && cp $SCRIPTPATH/themes.toml $HOME/.config/leftwm
 leftwm-theme update
 leftwm-theme install "ColorSpace"
 leftwm-theme apply "ColorSpace"
-touch $HOME/leftwm/themes/ColorSpace/polybar/cache.txt
+touch $HOME/.config/leftwm/themes/ColorSpace/polybar/cache.txt
 
 read -p "Would you like to reboot? (suggested) [Y/n] " yn
 case $yn in
