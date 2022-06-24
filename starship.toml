@@ -1,0 +1,124 @@
+# ~/.config/starship.toml
+
+
+[line_break]
+disabled = true
+
+
+# Remove the "❯" symbol in the prompt
+[character]                     
+success_symbol = ""       #No success_symbol
+error_symbol = " [✖](bold fg:red)"     #error_symbol in red
+
+
+[username]
+format = "[  ](bg:black)[](bg:$style fg:black)[ $user[$read_only]($read_only_style) ](bg:$style)[](fg:$style bg:black)"
+#format = "[$user]($style)[@](cyan)"
+style_user = "#3b4252"
+show_always = true 
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[cmd_duration]
+min_time = 100_000  # Show command duration over 100,000 milliseconds
+format = " took [$duration]($style)"
+
+#[directory]
+#truncation_length = 5
+#format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[directory]
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+style = "#4c566a"
+format = "(fg:$style)[](bg:$style fg:black)[ $path[$read_only]($read_only_style) ](bg:$style)[](fg:$style) "
+
+[hostname]
+ssh_only = false
+format = "[](bg:$style fg:black)[ $hostname[$read_only]($read_only_style) ](bg:$style)[](fg:$style bg:black)"
+#format = "[$hostname in]($style) "
+trim_at = "-"
+style = "#434c5e"
+disabled = true 
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+#[haskell]
+#symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+#show_percentage = true
+#show_swap = true
+threshold = 70
+style = "bold dimmed white"
+disabled = true
+
+[time]
+time_format = "%T"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = true
